@@ -5,7 +5,21 @@ Easy persistent model creation in Android.
 
 ## How To
 
-Your model objects must be subclass of `BaseObject`. Then, your object will be able to be stored and managed by the `ObjectContext`, which will coordinate with a `iPersistentStore` the storage in persistence.
+### Classes
+
+- **`BaseObject`**: Superclass for your model objects. A `BaseObject` has a reference to its `ObjectContext` (that might be `NULL` if there is no context). Also, a `BaseObject` has a `key` attribute. This key wil uniquely identify the object in the persistent model. Therefore, this key must be unique among all other base objects.
+
+- **`ObjectContext`**: Class that retains living instances of `BaseObjects`. An object context has an `iPersistentStore` (optionally), and will awake persisted objects from the persistent store when objects are requested. Also, when calling the method `save()`, the object context will save all objects to the persistent store (if available).
+
+- **`iPersistentStore`**: Abstract superclass for persistent stores. This class is a interface to the persistent storage, that must be implemented in a subclass of `iPersistentStore`.
+
+- **`PersistentObject`**: Abstract superclass for the persistent stores objec entries. This class is used by the `iPersistentStore` and must be subclassed. 
+
+- **`PersistentSQLiteStore`**: Implementation of the `iPersistentStore` using a SQLite database.
+
+- **`PersistentSQLiteObject`**: Implementation of the `PersistentObject` for the `PersistentSQLiteStore`.
+
+## Sample Code
 
 ### Getting an stored instance
 
