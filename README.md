@@ -21,7 +21,7 @@ Easy persistent model creation in Android.
 
 ### Observations
 
-PersistentModel does not support (yet) object relationships. Therefore you must work with non-relational model pattern, in which instead of hodling object pointers or array of object pointers as relations, you must deal with object identifiers.
+PersistentModel does not support (yet) object relationships. Therefore you model object must comply with the non-relational model pattern, in which your objects instead of hodling object pointers or arrays of object pointers as relations to other objects, you must deal with object identifiers (and use the object context to retrieve the object instances).
 
 ## Sample Code
 
