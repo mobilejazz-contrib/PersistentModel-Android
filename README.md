@@ -19,7 +19,7 @@ Easy persistent model creation in Android.
 
 - **`PersistentSQLiteObject`**: Implementation of the `PersistentObject` for the `PersistentSQLiteStore`.
 
-## Observations
+### Observations
 
 PersistentModel does not support (yet) object relationships. Therefore you must work with non-relational model pattern, in which instead of hodling object pointers or array of object pointers as relations, you must deal with object identifiers.
 
