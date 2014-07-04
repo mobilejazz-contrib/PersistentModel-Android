@@ -7,7 +7,7 @@ Easy persistent model creation in Android.
 
 ### Classes
 
-- **`BaseObject`**: Superclass for your model objects. A `BaseObject` has a reference to its `ObjectContext` (that might be `NULL` if there is no context). Also, a `BaseObject` has a `key` attribute. This key wil uniquely identify the object in the persistent model. Therefore, this key must be unique among all other base objects.
+- **`BaseObject`**: Superclass for your model objects. A `BaseObject` has a reference to its `ObjectContext` (that might be `NULL` if there is no context). Also, a `BaseObject` has a `key` attribute. This key wil uniquely identify the object in the persistent model. Therefore, this key must be unique among all other base objects. Also, `BaseObject` implements the interface `Serializable` to serialize its data into the persistent storage. Your subclasses attributes will be automatically serialized unless you add the `transient` decorator.
 
 - **`ObjectContext`**: Class that retains living instances of `BaseObjects`. An object context has an `iPersistentStore` (optionally), and will awake persisted objects from the persistent store when objects are requested. Also, when calling the method `save()`, the object context will save all objects to the persistent store (if available).
 
