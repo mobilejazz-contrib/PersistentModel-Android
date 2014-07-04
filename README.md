@@ -3,7 +3,7 @@ PersistentModel-Android
 
 Easy persistent model creation in Android. 
 
-## How To
+## Overview
 
 ### Classes
 
