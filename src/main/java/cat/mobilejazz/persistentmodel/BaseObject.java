@@ -70,6 +70,8 @@ public class BaseObject implements java.io.Serializable
 	// Creating instances and initializing
 	// ---------------------------------------------------------------------------------------------------------
 
+    public BaseObject(){};
+
 	public BaseObject(String key)  
 	{
 		super();
